@@ -31,6 +31,9 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+
+      - name: Install ICU package
+        run: sudo apt-get update && sudo apt-get install -y libicu-dev
       
       - name: Setup dotnet on runner
         uses: actions/setup-dotnet@v4
