@@ -1,8 +1,8 @@
-name: GitHub Action Test
+name: GitHub Actions Demo
 on: push
 jobs:
-  Example-Action-Job:
-    name: Exploring GitHub Action
+  Example-Actions-Job:
+    name: Exploring GitHub Actions
     runs-on: ubuntu-latest
     steps:
       # Display the event that triggered the workflow
@@ -16,7 +16,7 @@ jobs:
       
       # Use Action located in https://github.com/actions
       - name: Check out repository code
-        uses: actions/checkout@v4  
+        uses: actions/checkout@v2  
       
       - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
       
@@ -36,9 +36,6 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '3.x'
-
-      - name: Disable Globalization
-        run: export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=true
       
       - name: Display dotnet version
         run: dotnet --version
